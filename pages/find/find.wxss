@@ -1,0 +1,12 @@
+/* pages/video/video.wxss */
+page{
+  height: 100%;
+
+}
+.content{
+  /* background-color: #3a3a3a; */
+  min-height: 100%;
+}
+swiper swiper-item image{
+width: 100%;
+}

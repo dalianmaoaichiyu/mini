@@ -1,0 +1,4 @@
+/**index.wxss**/
+.name{
+  margin: 20rpx;
+} 
