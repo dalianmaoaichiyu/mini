@@ -20,6 +20,20 @@ Page({
       toastHidden: true,
       url: options.url
     })
+
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+ 
+
+  },
+     onShareAppMessage(res) {
+    if (res.from === 'button') {
+    }
+    return {
+      title: '妹子图',
+      path: '/pages/img/img?url='+this.data.url
+    }
   },
   //Toast信息改变
   onToastChanged: function (event) {
@@ -77,4 +91,5 @@ function saveImage(mUrl) {
       console.log("download complete");
     }
   })
+  
 }

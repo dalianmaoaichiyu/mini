@@ -6,14 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    urls:[],
+    page: 15
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      page: 15
+    })
     var that=this;
-    getData(that,1)
+    getData(that, this.data.page)
   }, onItemClick: function (event) {
     var targetUrl = "/pages/img/img";
     if (event.currentTarget.dataset.url != null)
@@ -23,12 +28,19 @@ Page({
       url: targetUrl
     });
   }, onReachBottom:function(){
-    console.log("加载更多")
-    getData(this,2)
-  }
+    console.log("加载更多" + this.data.page)
+    this.data.page = this.data.page+1
+    getData(this,this.data.page)
+  }   ,onPullDownRefresh() {
+    this.data.page=15
+    console.log("加载更多" + this.data.page)
+    this.data.urls=[];
+    getData(this, this.data.page)
+    // onLoad();
+  },
 })
 function getData(that,page){
-  var urls=[];
+ 
   wx.showToast({
     title: '',
     icon: 'loading',
@@ -46,9 +58,9 @@ function getData(that,page){
      
       var i = 0;
       for (; i < res.data.results.length; i++) {
-        urls.push({ src: res.data.results[i].url, time: res.data.results[i].desc, title: res.data.results[i].type })
+        that.data.urls.push({ src: res.data.results[i].url, time: res.data.results[i].desc, title: res.data.results[i].type })
       }
-      that.setData({ items: urls })
+      that.setData({ items: that.data.urls })
       wx.hideToast()
     }
   })

@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/mine/mine",
-    "pages/find/find",
     "pages/img/img"
   ],
   "window": {
@@ -11,6 +10,7 @@
     "navigationBarTitleText": "yxl",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh":true
+    
   },
   "tabBar": {
     "list": [
@@ -21,16 +21,10 @@
         "selectedIconPath": "images/first.png"
       },
       {
-        "pagePath": "pages/find/find",
+        "pagePath": "pages/mine/mine",
         "text": "发现",
         "iconPath": "images/find1.png",
         "selectedIconPath": "images/find.png"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "text": "我的",
-        "iconPath": "images/mine1.png",
-        "selectedIconPath": "images/mine.png"
       }
     ],
     "selectedColor": "#AF262A",

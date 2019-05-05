@@ -1,25 +1,7 @@
-
- <view class="container">
-<text class='name'>三月</text>
- <button bindtap='play'>播放 </button>
- <button bindtap='pase'>暂停</button> 
-
-</view>
-
-<!-- <view class='content'>
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}">
-      <swiper-item>
-        <image src="{{item}}" class="slide-image" width="355" height="150" />
-      </swiper-item>
-    </block>
-  </swiper>
-   <view class="card" wx:for="{{items}}">
+ <view class="card" wx:for="{{items}}">
         <view data-url="{{item.src}}"  bindtap="onItemClick">
-            <!-- <image class="image" mode="aspectFill" src="{{item.src}}"/> -->
-            <!-- <text class="time">{{item.time}}</text>
-            <view class="title">{{item.title}}</view>
+            <image class="image" mode="aspectFill" src="{{item.src}}"/>
+            <!-- <text class="time">{{item.time}}</text> -->
+            <!-- <view class="title">{{item.title}}</view> -->
         </view>
     </view>
-
-</view> --> 
